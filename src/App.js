@@ -1,18 +1,27 @@
-import Button from "./components/Button";
-import { GoBell, GoBriefcase } from "react-icons/go";
+import Accordion from "./components/Accordion";
+import ButtonPage from "./pages/ButtonPage";
 
 function App() {
-    const handleClick = () => {
-        console.log('Clicked!');
-    };
-
+    const items = [
+        {
+            id: 1,
+            label : "Can I use React on a project?",
+            content : "You can use whatever you like for any project that you like. How long is the porject?"
+        },
+        {   id: 2,
+            label : "Can I use CSS on a project?",
+            content : "You can use whatever you like for any project that you like. How long is the porject?"
+        },
+        {
+            id: 3,
+            label : "Can I use JS on a project?",
+            content : "You can use whatever you like for any project that you like. How long is the porject?"
+        }
+    ]
     return (
         <div>
-            <div><Button primary rounded outline onClick={handleClick}><GoBell />Click me!</Button></div>
-            <div><Button danger outline onMouseEnter={handleClick} className="mb-10"><GoBriefcase />see me</Button></div>
-            <div><Button warning onMouseLeave={handleClick}>hide</Button></div>
-            <div><Button secondary outline>show</Button></div>
-            <div><Button success rounded>hello</Button></div>
+            <ButtonPage></ButtonPage>
+            <Accordion items={items}></Accordion>
         </div>
     );
 }
