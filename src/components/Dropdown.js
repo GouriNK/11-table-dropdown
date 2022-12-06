@@ -11,6 +11,9 @@ function Dropdown({ options, value, onChange }) {
   useEffect(()=>{
     // create the function to bind
     const onBodyClick = (event) => {
+        if (!refToDropdown.current) {
+          return;
+        }
         if(!refToDropdown.current.contains(event.target)){
             setIsOpen(false);
         }

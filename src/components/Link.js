@@ -1,13 +1,17 @@
 import classnames from 'classnames';
 import useNavigation from "../hooks/use-navigation";
 
-function Link({to, children}) {
-    const {navigate} = useNavigation();
+function Link({to, children, className, activeClassName}) {
+    const {navigate, currPath} = useNavigation();
 
-    const classes = classnames('text-blue-500');
+    const classes = classnames(
+        'text-blue-500',
+        className,
+        currPath === to && activeClassName
+    );
 
     const handleClick = (event)=> {
-        // allow cmd*click on link to open new url
+        // allow cmd+click on link to open new url
         if(event.metaKey || event.ctrlKey) {
             return;
         }
