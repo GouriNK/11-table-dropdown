@@ -3,6 +3,7 @@ import Route from "./components/Route";
 import AccordionPage from "./pages/AccordionPage";
 import ButtonPage from "./pages/ButtonPage";
 import DropdownPage from "./pages/DropdownPage";
+import ModalPage from './pages/ModalPage';
 
 function App() {
     return (
@@ -11,6 +12,9 @@ function App() {
             <div className="col-span-5">
                 <Route path="/buttons">
                     <ButtonPage></ButtonPage>
+                </Route>
+                <Route path="/modal">
+                    <ModalPage></ModalPage>
                 </Route>
                 <Route path="/accordion">
                     <AccordionPage></AccordionPage>
